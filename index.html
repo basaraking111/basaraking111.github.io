@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        /* 这里是样式表，修改颜色和布局看这里 */
+        :root {
+            --bg-color: #f4f4f5;       /* 背景色 */
+            --card-bg: #ffffff;        /* 卡片背景色 */
+            --text-main: #333333;      /* 主文字色 */
+            --text-sub: #666666;       /* 副文字色 */
+            --accent: #2563eb;         /* 强调色(按钮颜色) */
+        }
+
+        /* 如果想支持深色模式，浏览器会自动切换 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #18181b;
+                --card-bg: #27272a;
+                --text-main: #f4f4f5;
+                --text-sub: #a1a1aa;
+                --accent: #60a5fa;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--bg-color);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+        }
+
+        p.bio {
+            color: var(--text-sub);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            color: var(--card-bg);
+            background-color: var(--text-main);
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn.primary {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        /* 底部版权稍微小一点 */
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://ui-avatars.com/api/?name=User&background=random&size=256" alt="Avatar" class="avatar">
+        
+        <h1>你的名字</h1>
+        
+        <p class="bio">
+            产品经理 / 独立开发者<br>
+            专注于极简设计与效率工具<br>
+            Hello World.
+        </p>
+
+        <div class="links">
+            <a href="mailto:your-email@example.com" class="btn primary">Email Me</a>
+            
+            <a href="https://github.com/yourname" target="_blank" class="btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/yourname" target="_blank" class="btn">LinkedIn</a>
+            <a href="https://yourblog.com" target="_blank" class="btn">My Blog</a>
+        </div>
+        
+        <div class="footer">
+            © 2025 ALL RIGHTS RESERVED.
+        </div>
+    </div>
+
+</body>
+</html>
